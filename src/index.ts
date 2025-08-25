@@ -8,6 +8,7 @@ import { menuKeyboard, premiumKeyboard} from './keyboards/index.js';
 import { commands } from './consts/commands.js';
 import { buyPremiumCommand } from './commands/index.js';
 import { User } from './models/user.js';
+import express from 'express';
 import { Request, Response } from 'express';
 
 
@@ -92,7 +93,7 @@ async function start() {
 }
 
 
-const app = require('express')()
+const app = express()
 const port = 3000
 
 app.get('/', (req: Request, res: Response) => {
