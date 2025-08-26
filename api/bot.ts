@@ -1,5 +1,5 @@
 import dotenv from 'dotenv';
-import { Bot, GrammyError, HttpError} from 'grammy';
+import { Bot, GrammyError, HttpError, webhookCallback} from 'grammy';
 import mongoose from 'mongoose';
 import { MyContext } from './types.js';
 import { hydrate } from '@grammyjs/hydrate';
@@ -91,7 +91,7 @@ async function start() {
 }
 start()
 
-export default bot;
+export default webhookCallback(bot, "https");
 
 
 "node --loader ts-node/esm --no-warnings src/index.ts"
