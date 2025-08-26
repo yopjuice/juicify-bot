@@ -8,8 +8,6 @@ import { menuKeyboard, premiumKeyboard} from './keyboards/index.js';
 import { commands } from './consts/commands.js';
 import { buyPremiumCommand } from './commands/index.js';
 import { User } from './models/user.js';
-import express from 'express';
-import { Request, Response } from 'express';
 
 
 
@@ -91,20 +89,9 @@ async function start() {
 		console.error('Error starting bot', e)
 	}
 }
-
-
-const app = express()
-const port = 3000
-
-app.get('/', (req: Request, res: Response) => {
-  res.send('Hello World!')
-})
-
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
-
 start()
+
+export default bot;
 
 
 "node --loader ts-node/esm --no-warnings src/index.ts"
