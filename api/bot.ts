@@ -91,11 +91,16 @@ async function start() {
 }
 start()
 
-export const config = {
-  runtime: "edge",
-};
+import express from 'express';
 
-export default webhookCallback(bot, "std/http");
+const app = express() // or whatever you're using
+
+app.use(webhookCallback(bot, 'express'))
+
+app.listen(3000, async () => {
+	console.log('Listening on port 3000');
+	await start();
+})
 
 
 
