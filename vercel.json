@@ -1,7 +1,5 @@
 {
   "functions": {
-    "api/bot.ts": {
-			"runtime": "edge"
-		}
+    "api/bot.ts": {}
   }
 }
