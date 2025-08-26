@@ -83,15 +83,20 @@ bot.catch(async (err) => {
 async function start() {
 	try {
 		await mongoose.connect(process.env.MONGO_URL!)
-		bot.start();
-		console.log('Bot started & Mongo connected');
+		// bot.start()
+		console.log('Mongo connected');
 	} catch (e) {
 		console.error('Error starting bot', e)
 	}
 }
 start()
 
-export default webhookCallback(bot, "https");
+export const config = {
+  runtime: "edge",
+};
+
+export default webhookCallback(bot, "std/http");
+
 
 
 "node --loader ts-node/esm --no-warnings src/index.ts"
