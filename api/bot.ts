@@ -94,6 +94,7 @@ start()
 import express from 'express';
 
 const app = express() // or whatever you're using
+app.use(express.json())
 
 app.use(webhookCallback(bot, 'express'))
 
