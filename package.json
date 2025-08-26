@@ -2,11 +2,11 @@
   "name": "tg-bot",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/index.ts",
+  "main": "dist/bot.ts",
   "scripts": {
-    "dev": "nodemon --no-warnings --exec tsx src/index.ts",
+    "dev": "nodemon --no-warnings --exec tsx api/bot.ts",
     "build": "tsc",
-    "start": "node dist/index.js"
+    "start": "node dist/bot.js"
   },
   "keywords": [],
   "author": "",
